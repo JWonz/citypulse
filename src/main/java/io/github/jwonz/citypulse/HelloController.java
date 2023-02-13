@@ -34,6 +34,7 @@ public class HelloController {
 			HttpHeaders headers = new HttpHeaders();
 			headers.setContentType(MediaType.APPLICATION_JSON);
 			headers.setContentLength(fileBytes.length);
+			headers.add("Access-Control-Allow-Origin", "*");
 
 			return new ResponseEntity<>(fileBytes, headers, HttpStatus.OK);
 		} catch (IOException ex) {
